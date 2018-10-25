@@ -8,6 +8,7 @@ Requirements:
 * mysql:metrics defined
 
 How to Use
+==========
 Add the snippet to /usr/local/percona/pmm-client/queries-mysqld.yml
 
 That's it!  PMM automatically sources that file every scrape interval which is currently the Low Resolution (LR) bucket which defaults to 60s.
