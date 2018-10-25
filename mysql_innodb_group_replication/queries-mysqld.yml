@@ -1,0 +1,90 @@
+mysql_performance_schema_group_replication_applier_status:
+  query: "SELECT * FROM PERFORMANCE_SCHEMA.replication_applier_status"
+  metrics:
+    - channel_name:
+        usage: "LABEL"
+        description: "The name of the Group Replication channel."
+    - service_state:
+        usage: "LABEL"
+        description: "Shows whether the applier service is ON or OFF."
+    - count_transactions_retries:
+        usage: "GAUGE"
+        description: "The number of retries performed while applying a transaction."
+    - remaining_delay:
+        usage: "GAUGE"
+        description: "Shows whether there is some applier delay configured."
+    - received_transaction_set:
+        usage: "LABEL"
+        description: "Transactions in this GTID set have been received by this member of the group."
+mysql_performance_schema_group_replication_members:
+  query: "SELECT * FROM PERFORMANCE_SCHEMA.replication_group_members"
+  metrics:
+    - CHANNEL_NAME:
+        usage: "LABEL"
+        description: "The name of the Group Replication channel."
+    - MEMBER_STATE:
+        usage: "LABEL"
+        description: "The current state of the group member."
+    - MEMBER_ROLE:
+        usage: "LABEL"
+        description: "The current role of the group member."
+    - MEMBER_VERSION:
+        usage: "LABEL"
+        description: "The current role of the group member."
+    - MEMBER_HOST:
+        usage: "LABEL"
+        description: "The current role of the group member."
+    - MEMBER_ID:
+        usage: "LABEL"
+        description: "The current role of the group member."
+    - MEMBER_PORT:
+        usage: "GAUGE"
+        description: "The current role of the group member."
+mysql_performance_schema_group_replication_group_member_stats:
+  query: "SELECT * FROM PERFORMANCE_SCHEMA.replication_group_member_stats"
+  metrics:
+    - CHANNEL_NAME:
+        usage: "LABEL"
+        description: "The name of the Group Replication channel."
+    - VIEW_ID:
+        usage: "LABEL"
+        description: "The current view identifier for this group."
+    - MEMBER_ID:
+        usage: "LABEL"
+        description: "The member server UUID. This has a different value for each member in the group. This also serves as a key because it is unique to each member."
+    - TRANSACTIONS_COMMITTED_ALL_MEMBERS:
+        usage: "LABEL"
+        description: "The transactions that have been successfully committed on all members of the replication group. This is updated at a fixed time interval."
+    - LAST_CONFLICT_FREE_TRANSACTION:
+        usage: "LABEL"
+        description: "The transaction identifier of the last conflict free transaction checked."
+    - COUNT_TRANSACTIONS_IN_QUEUE:
+        usage: "GAUGE"
+        description: "The number of transactions in the queue pending conflict detection checks. Once the transactions have been checked for conflicts, if they pass the check, they are queued to be applied as well."
+    - COUNT_TRANSACTIONS_CHECKED:
+        usage: "GAUGE"
+        description: "The number of transactions that have been checked for conflicts."
+    - COUNT_CONFLICTS_DETECTED:
+        usage: "COUNTER"
+        description: "The number of transactions that did not pass the conflict detection check."
+    - COUNT_TRANSACTIONS_ROWS_VALIDATING:
+        usage: "GAUGE"
+        description: "The current size of the conflict detection database (against which each transaction is certified)."
+mysql_performance_schema_group_replication_replication_connection_status:
+  query: "SELECT * FROM PERFORMANCE_SCHEMA.replication_connection_status"
+  metrics:
+    - CHANNEL_NAME:
+        usage: "LABEL"
+        description: "The name of the Group Replication channel."
+    - group_name:
+        usage: "LABEL"
+        description: "Shows the value of the name of the group. It is always a valid UUID."
+    - source_uuid:
+        usage: "LABEL"
+        description: "Shows the identifier for the group. It is similar to the group name and it is used as the UUID for all the transactions that are generated during group replication."
+    - service_state:
+        usage: "LABEL"
+        description: "Shows whether the member is a part of the group or not. The possible values of service state can be ON, OFF or CONNECTING"
+    - received_transaction_set:
+        usage: "LABEL"
+        description: "Transactions in this GTID set have been received by this member of the group."
