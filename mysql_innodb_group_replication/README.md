@@ -6,6 +6,7 @@ Requires that you have already loaded the InnoDB GR plugin so that the relevant 
 * replication_group_members
 * replication_applier_status
 * replication_group_member_stats
+* replication_connection_status
 
-Will generate metric series beginning with:
+This code will generate metric series beginning with:
 `mysql_performance_schema_group_replication`
