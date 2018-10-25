@@ -8,5 +8,4 @@ Requires that you have already loaded the InnoDB GR plugin so that the relevant 
 * replication_group_member_stats
 * replication_connection_status
 
-This code will generate metric series beginning with:
-`mysql_performance_schema_group_replication`
+This code will generate metric series beginning with `mysql_performance_schema_group_replication`
