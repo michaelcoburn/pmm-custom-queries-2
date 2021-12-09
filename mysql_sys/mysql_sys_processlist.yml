@@ -1,0 +1,57 @@
+mysql_sys_processlist:
+  query: "SELECT * FROM sys.x$processlist"
+  metrics:
+    - thd_id:
+        usage: "LABEL"
+        description: "Thread ID"
+#    - conn_id:
+#        usage: "LABEL"
+#        description: "Connection ID"
+    - user:
+        usage: "LABEL"
+        description: "User@Host"
+    - command:
+        usage: "LABEL"
+        description: "Command"
+#    - statement_latency:
+#        usage: "COUNTER"
+#        description: "Statement Latency"
+#    - lock_latency:
+#        usage: "COUNTER"
+#        description: "Lock Latency"
+#    - rows_examined:
+#        usage: "COUNTER"
+#        description: "Rows Examined"
+#    - rows_sent:
+#        usage: "COUNTER"
+#        description: "Rows Sent"
+#    - current_memory:
+#        usage: "COUNTER"
+#        description: "Current Memory"
+    - trx_state:
+        usage: "LABEL"
+        description: "Transaction State"
+#    - trx_latency: 
+#        usage: "COUNTER"
+#        description: "Transaction Latency"
+    - trx_autocommit:
+        usage: "LABEL"
+        description: "Transaction Auto-Commit"
+    - full_scan:
+        usage: "LABEL"
+        description: "Full Table Scan"
+    - current_statement:
+        usage: "LABEL"
+        description: "Current Statement"
+    - last_statement:
+        usage: "LABEL"
+        description: "Last Statement"
+    - state:
+        usage: "LABEL"
+        description: "Last Statement"
+    - db:
+        usage: "LABEL"
+        description: "Last Statement"
+    - program_name:
+        usage: "LABEL"
+        description: "Last Statement"

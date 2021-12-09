@@ -1,0 +1,9 @@
+mysql_sys_memory_by_thread_by_current_bytes:
+  query: "select * from x$memory_by_thread_by_current_bytes"
+  metrics:
+    - thread_id:
+        usage: "LABEL"
+        description: "Thread ID"
+    - user:
+        usage: "LABEL"
+        description: "User"

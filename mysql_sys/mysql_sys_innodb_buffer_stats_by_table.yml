@@ -1,0 +1,9 @@
+mysql_sys_innodb_buffer_stats_by_table:
+  query: "select * from sys.x$innodb_buffer_stats_by_table"
+  metrics:
+    - object_schema:
+        usage: "LABEL"
+        description: "Table Schema"
+    - object_name:
+        usage: "LABEL"
+        description: "Table Name"

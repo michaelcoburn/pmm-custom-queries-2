@@ -1,0 +1,9 @@
+mysql_sys_schema_schema_table_statistics:
+  query: "select * from sys.x$schema_table_statistics where total_latency > 0;"
+  metrics:
+    - table_schema:
+        usage: "LABEL"
+        description: "Table Schema"
+    - table_name:
+        usage: "LABEL"
+        description: "Table Name"

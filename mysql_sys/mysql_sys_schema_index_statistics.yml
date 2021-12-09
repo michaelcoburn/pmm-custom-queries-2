@@ -1,0 +1,12 @@
+mysql_sys_schema_index_statistics:
+  query: "select * from sys.x$schema_index_statistics;"
+  metrics:
+    - table_schema:
+        usage: "LABEL"
+        description: "Table Schema"
+    - table_name:
+        usage: "LABEL"
+        description: "Table Name"
+    - index_name:
+        usage: "LABEL"
+        description: "Index Name"        
